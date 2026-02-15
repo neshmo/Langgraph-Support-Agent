@@ -1,0 +1,18 @@
+ALL ROUTES IN APP:
+==================================================
+  ['GET', 'HEAD'] -> /openapi.json
+  ['GET', 'HEAD'] -> /docs
+  ['GET', 'HEAD'] -> /docs/oauth2-redirect
+  ['GET', 'HEAD'] -> /redoc
+  ['GET'] -> /health
+  ['GET'] -> /tickets/
+  ['POST'] -> /tickets/
+  ['GET'] -> /tickets/{ticket_id}
+  ['POST'] -> /feedback/
+  ['GET'] -> /
+==================================================
+
+TICKETS ROUTES:
+  ['GET'] -> /tickets/
+  ['POST'] -> /tickets/
+  ['GET'] -> /tickets/{ticket_id}

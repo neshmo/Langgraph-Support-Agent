@@ -1,0 +1,81 @@
+.dashboard {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    height: 100%;
+    /* Fill the main-content */
+    background: var(--color-surface);
+}
+
+.sidebar {
+    background: var(--color-bg);
+    /* Use global grey */
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarHeader {
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebarHeader h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-text-primary);
+}
+
+.refreshBtn {
+    background: transparent;
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    transition: all 0.2s;
+}
+
+.refreshBtn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--color-text-primary);
+}
+
+.loading,
+.error,
+.emptyState {
+    padding: var(--space-6);
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+.error {
+    color: var(--color-error);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+.subtext {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: var(--space-2);
+}
+
+.main {
+    overflow-y: auto;
+    background: var(--color-surface);
+}
+
+.placeholder {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-tertiary);
+}

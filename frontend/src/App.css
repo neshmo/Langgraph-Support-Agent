@@ -1,0 +1,116 @@
+/* Main Container - The "App Shell" */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* Full viewport height */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+/* Header Section */
+.header {
+  flex-shrink: 0;
+  /* Don't shrink */
+  padding: var(--space-6) 0 var(--space-4);
+  background-color: var(--color-bg);
+  /* Match body bg */
+  z-index: 10;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+/* Navigation */
+.nav-bar {
+  display: inline-flex;
+  background: var(--color-surface);
+  padding: 4px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+}
+
+.nav-btn.active {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  /* Take remaining space */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* Prevent double scrollbars */
+  background: var(--color-surface);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+  margin-bottom: 0;
+  /* Anchored to bottom or floating? Let's anchor for now */
+  position: relative;
+}
+
+/* Full Width Utility override for dashboard if needed */
+.full-width {
+  /* Previously used for dashboard, but now we want a consistent container */
+  /* We can let the main-content handle the width */
+}
+
+.full-height {
+  height: 100%;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .app-container {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .header {
+    padding: var(--space-4);
+  }
+
+  .main-content {
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+}
